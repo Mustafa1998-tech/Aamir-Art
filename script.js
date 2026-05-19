@@ -247,10 +247,6 @@
         }
 
         modalImage.appendChild(grid);
-            grid.appendChild(video);
-        }
-
-        modalImage.appendChild(grid);
 
         modalCategory.textContent = category;
         modalTitle.textContent = title;

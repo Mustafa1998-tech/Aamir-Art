@@ -990,16 +990,29 @@ button {
 /* ============================================
    REVEAL ANIMATIONS (CSS baseline)
    ============================================ */
+/* Reveal animations — content visible even without JS */
 .reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s var(--ease-out),
-                transform 0.8s var(--ease-out);
+    opacity: 1;
+    transform: none;
 }
 
 .reveal.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s var(--ease-out),
+                    transform 0.8s var(--ease-out);
+    }
+
+    .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Slide from right */
