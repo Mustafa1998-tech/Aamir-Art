@@ -237,24 +237,43 @@
     function openModal(card) {
         if (!modal) return;
 
-        const img = card.querySelector('.work__card-image img');
+        const folder = card.dataset.folder;
         const videoSrc = card.dataset.video;
         const category = card.querySelector('.work__card-category')?.textContent || '';
         const title = card.querySelector('.work__card-title')?.textContent || '';
         const details = card.dataset.details || '';
 
         modalImage.innerHTML = '';
+        modalImage.classList.add('modal__gallery');
+
+        const mediaWrapper = document.createElement('div');
+        mediaWrapper.className = 'modal__media-grid';
+
+        if (folder) {
+            let loaded = 0;
+            for (let i = 1; i <= 10; i++) {
+                const imgPath = `${folder}/image-${i}.jpg`;
+                const img = document.createElement('img');
+                img.src = imgPath;
+                img.alt = `${title} - Image ${i}`;
+                img.loading = 'lazy';
+                img.onerror = function () { this.remove(); };
+                img.onload = function () { loaded++; };
+                mediaWrapper.appendChild(img);
+            }
+        }
+
         if (videoSrc) {
             const video = document.createElement('video');
             video.src = videoSrc;
             video.controls = true;
-            video.autoplay = true;
             video.playsInline = true;
-            modalImage.appendChild(video);
-        } else if (img) {
-            const clone = img.cloneNode();
-            modalImage.appendChild(clone);
+            video.preload = 'metadata';
+            video.className = 'modal__video';
+            mediaWrapper.appendChild(video);
         }
+
+        modalImage.appendChild(mediaWrapper);
 
         modalCategory.textContent = category;
         modalTitle.textContent = title;

@@ -904,15 +904,39 @@ button {
 
 .modal__image {
     width: 100%;
-    height: 380px;
+    max-height: 70vh;
+    overflow-y: auto;
     background: var(--bg-secondary);
 }
 
 .modal__image img,
 .modal__image video {
     width: 100%;
-    height: 100%;
+    display: block;
+}
+
+.modal__gallery {
+    padding: var(--space-md);
+}
+
+.modal__media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-md);
+}
+
+.modal__media-grid img {
+    width: 100%;
+    height: 280px;
     object-fit: cover;
+    border-radius: 2px;
+}
+
+.modal__video {
+    grid-column: 1 / -1;
+    max-height: 500px;
+    object-fit: contain;
+    background: #000;
 }
 
 .modal__body {
