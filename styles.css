@@ -181,12 +181,15 @@ button {
 }
 
 .nav__logo {
-    font-family: var(--font-serif);
-    font-size: 1.4rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--text-primary);
+    display: flex;
+    align-items: center;
     transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.nav__logo-img {
+    height: 32px;
+    width: auto;
+    display: block;
 }
 
 .nav__logo:hover {
