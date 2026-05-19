@@ -1007,3 +1007,63 @@ button {
 
     .hero__scroll-indicator {
         display: none;
+    }
+
+    .work__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .about__stats {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .contact__socials {
+        flex-direction: column;
+        gap: var(--space-lg);
+    }
+
+    .footer__inner {
+        flex-direction: column;
+        gap: var(--space-sm);
+        text-align: center;
+    }
+
+    .about__image img {
+        height: 300px;
+    }
+
+    .modal__image {
+        height: 220px;
+    }
+
+    .section {
+        padding: var(--space-4xl) 0;
+    }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .work__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+    }
+
+    .about__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+    }
+
+    .about__image img {
+        height: 400px;
+    }
+}
+
+/* Large desktop */
+@media (min-width: 1400px) {
+    .work__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-xl);
+    }
+}
