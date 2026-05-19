@@ -224,7 +224,47 @@
     updateActiveLink();
 
     // ============================================
-    // 8. PROJECT MODAL
+    // 8. POPULATE CARD GALLERIES
+    // ============================================
+    function buildCardGalleries() {
+        document.querySelectorAll('.work__card[data-folder]').forEach((card) => {
+            const folder = card.dataset.folder;
+            const videoSrc = card.dataset.video;
+            const imgContainer = card.querySelector('.work__card-image');
+            if (!imgContainer) return;
+
+            const gallery = document.createElement('div');
+            gallery.className = 'card-gallery';
+
+            for (let i = 1; i <= 10; i++) {
+                const imgPath = `${folder}/image-${i}.jpg`;
+                const img = document.createElement('img');
+                img.src = imgPath;
+                img.alt = '';
+                img.loading = 'lazy';
+                img.onerror = function () { this.remove(); };
+                gallery.appendChild(img);
+            }
+
+            if (videoSrc) {
+                const video = document.createElement('video');
+                video.src = videoSrc;
+                video.controls = true;
+                video.playsInline = true;
+                video.preload = 'metadata';
+                video.className = 'card-video';
+                gallery.appendChild(video);
+            }
+
+            imgContainer.innerHTML = '';
+            imgContainer.appendChild(gallery);
+        });
+    }
+
+    buildCardGalleries();
+
+    // ============================================
+    // 9. PROJECT MODAL
     // ============================================
     const modal = document.getElementById('projectModal');
     const modalBackdrop = modal?.querySelector('.modal__backdrop');
@@ -244,10 +284,9 @@
         const details = card.dataset.details || '';
 
         modalImage.innerHTML = '';
-        modalImage.classList.add('modal__gallery');
 
-        const mediaWrapper = document.createElement('div');
-        mediaWrapper.className = 'modal__media-grid';
+        const grid = document.createElement('div');
+        grid.className = 'modal__media-grid';
 
         if (folder) {
             let loaded = 0;
@@ -255,11 +294,10 @@
                 const imgPath = `${folder}/image-${i}.jpg`;
                 const img = document.createElement('img');
                 img.src = imgPath;
-                img.alt = `${title} - Image ${i}`;
+                img.alt = `${title} - ${i}`;
                 img.loading = 'lazy';
                 img.onerror = function () { this.remove(); };
-                img.onload = function () { loaded++; };
-                mediaWrapper.appendChild(img);
+                grid.appendChild(img);
             }
         }
 
@@ -270,10 +308,10 @@
             video.playsInline = true;
             video.preload = 'metadata';
             video.className = 'modal__video';
-            mediaWrapper.appendChild(video);
+            grid.appendChild(video);
         }
 
-        modalImage.appendChild(mediaWrapper);
+        modalImage.appendChild(grid);
 
         modalCategory.textContent = category;
         modalTitle.textContent = title;
