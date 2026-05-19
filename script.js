@@ -127,34 +127,8 @@
     }
 
     // ============================================
-    // 5. PARALLAX / TILT EFFECT ON PROJECT CARDS
+    // 5. (removed - parallax tilt conflicts with gallery)
     // ============================================
-    const cards = document.querySelectorAll('.work__card');
-
-    cards.forEach((card) => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const rotateX = ((y - centerY) / centerY) * -6;
-            const rotateY = ((x - centerX) / centerX) * 6;
-
-            card.style.transform = `
-                perspective(1000px)
-                rotateX(${rotateX}deg)
-                rotateY(${rotateY}deg)
-                translateY(-8px)
-            `;
-        });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-        });
-    });
 
     // ============================================
     // 6. CURSOR FOLLOW (subtle dot) — desktop only
@@ -224,47 +198,7 @@
     updateActiveLink();
 
     // ============================================
-    // 8. POPULATE CARD GALLERIES
-    // ============================================
-    function buildCardGalleries() {
-        document.querySelectorAll('.work__card[data-folder]').forEach((card) => {
-            const folder = card.dataset.folder;
-            const videoSrc = card.dataset.video;
-            const imgContainer = card.querySelector('.work__card-image');
-            if (!imgContainer) return;
-
-            const gallery = document.createElement('div');
-            gallery.className = 'card-gallery';
-
-            for (let i = 1; i <= 10; i++) {
-                const imgPath = `${folder}/image-${i}.jpg`;
-                const img = document.createElement('img');
-                img.src = imgPath;
-                img.alt = '';
-                img.loading = 'lazy';
-                img.onerror = function () { this.remove(); };
-                gallery.appendChild(img);
-            }
-
-            if (videoSrc) {
-                const video = document.createElement('video');
-                video.src = videoSrc;
-                video.controls = true;
-                video.playsInline = true;
-                video.preload = 'metadata';
-                video.className = 'card-video';
-                gallery.appendChild(video);
-            }
-
-            imgContainer.innerHTML = '';
-            imgContainer.appendChild(gallery);
-        });
-    }
-
-    buildCardGalleries();
-
-    // ============================================
-    // 9. PROJECT MODAL
+    // 8. PROJECT MODAL
     // ============================================
     const modal = document.getElementById('projectModal');
     const modalBackdrop = modal?.querySelector('.modal__backdrop');
@@ -278,7 +212,8 @@
         if (!modal) return;
 
         const folder = card.dataset.folder;
-        const videoSrc = card.dataset.video;
+        const cardVideo = card.querySelector('.card-gallery video');
+        const videoSrc = cardVideo ? cardVideo.src : null;
         const category = card.querySelector('.work__card-category')?.textContent || '';
         const title = card.querySelector('.work__card-title')?.textContent || '';
         const details = card.dataset.details || '';
@@ -289,7 +224,6 @@
         grid.className = 'modal__media-grid';
 
         if (folder) {
-            let loaded = 0;
             for (let i = 1; i <= 10; i++) {
                 const imgPath = `${folder}/image-${i}.jpg`;
                 const img = document.createElement('img');
@@ -304,10 +238,15 @@
         if (videoSrc) {
             const video = document.createElement('video');
             video.src = videoSrc;
-            video.controls = true;
+            video.autoplay = true;
+            video.loop = true;
+            video.muted = true;
             video.playsInline = true;
-            video.preload = 'metadata';
             video.className = 'modal__video';
+            grid.appendChild(video);
+        }
+
+        modalImage.appendChild(grid);
             grid.appendChild(video);
         }
 

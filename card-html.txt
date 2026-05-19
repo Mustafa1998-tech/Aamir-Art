@@ -1,89 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aamir Art — Furniture Designer & Creative Artisan</title>
-    <meta name="description" content="Portfolio of Aamir Art — Crafting timeless furniture and spatial experiences through minimalist design and masterful craftsmanship.">
-    <meta name="theme-color" content="#0a0a0a">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-    <!-- ====== NAVIGATION ====== -->
-    <nav class="nav">
-        <div class="nav__inner container">
-            <a href="#" class="nav__logo">Aamir Art</a>
-            <div class="nav__links">
-                <a href="#work" class="nav__link">Work</a>
-                <a href="#about" class="nav__link">About</a>
-                <a href="#contact" class="nav__link">Contact</a>
-            </div>
-            <div class="nav__actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                    <svg class="theme-toggle__icon theme-toggle__sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
-                    </svg>
-                    <svg class="theme-toggle__icon theme-toggle__moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
-                <button class="nav__toggle" aria-label="Menu">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- ====== MOBILE MENU ====== -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu__inner">
-            <a href="#work" class="mobile-menu__link">Work</a>
-            <a href="#about" class="mobile-menu__link">About</a>
-            <a href="#contact" class="mobile-menu__link">Contact</a>
-        </div>
-    </div>
-
-    <!-- ====== HERO ====== -->
-    <section class="hero" id="hero">
-        <div class="container">
-            <div class="hero__content">
-                <p class="hero__label reveal fade-up" data-delay="0">Est. 2018</p>
-                <h1 class="hero__title hero__title--animate reveal fade-up" data-delay="150">
-                    Crafting<br>
-                    <span class="hero__title-accent">Timeless</span><br>
-                    Furniture
-                </h1>
-                <p class="hero__subtitle reveal fade-up" data-delay="300">
-                    Aamir Art — where minimalist design meets masterful craftsmanship. 
-                    Creating bespoke furniture and spatial experiences for the discerning.
-                </p>
-                <a href="#work" class="btn btn--primary reveal fade-up" data-delay="450"><span>View Work</span></a>
-            </div>
-            <div class="hero__scroll-indicator">
-                <span>Scroll</span>
-                <div class="hero__scroll-line"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== WORK / PROJECTS ====== -->
-    <section class="work section" id="work">
-        <div class="container">
-            <div class="section__header reveal fade-up">
-                <p class="section__label">Selected Projects</p>
-                <h2 class="section__title">Works</h2>
-            </div>
-            <div class="work__grid">
-
                 <div class="work__card reveal fade-up" data-folder="assets/images/wood-candle" data-category="Candle" data-details="Handcrafted wooden candle holder carved from natural oak. Each piece features a unique grain pattern and is finished with organic beeswax for a warm, ambient glow.">
                     <div class="work__card-image">
                         <div class="card-gallery">
                             <img src="assets/images/wood-candle/image-1.jpg" alt="Wood Candle" loading="lazy">
                             <img src="assets/images/wood-candle/image-2.jpg" alt="Wood Candle" loading="lazy">
                             <img src="assets/images/wood-candle/image-3.jpg" alt="Wood Candle" loading="lazy">
-                            <video src="assets/images/wood-candle/video.mp4" autoplay loop muted playsinline preload="metadata" class="card-video"></video>
+                            <video src="assets/images/wood-candle/video.mp4" controls playsinline preload="metadata" class="card-video"></video>
                         </div>
                         <div class="work__card-overlay">
                             <span>View Project</span>
@@ -95,14 +16,13 @@
                         <p class="work__card-desc">Handcrafted wooden candle holder carved from natural oak with a warm, ambient glow.</p>
                     </div>
                 </div>
-
                 <div class="work__card reveal fade-up" data-folder="assets/images/wood-candle-v2" data-category="Candle" data-details="Carved wooden candle holder in ash wood with a sculptural silhouette, finished with natural linseed oil.">
                     <div class="work__card-image">
                         <div class="card-gallery">
                             <img src="assets/images/wood-candle-v2/image-1.jpg" alt="Wood Candle II" loading="lazy">
                             <img src="assets/images/wood-candle-v2/image-2.jpg" alt="Wood Candle II" loading="lazy">
                             <img src="assets/images/wood-candle-v2/image-3.jpg" alt="Wood Candle II" loading="lazy">
-                            <video src="assets/images/wood-candle-v2/video.mp4" autoplay loop muted playsinline preload="metadata" class="card-video"></video>
+                            <video src="assets/images/wood-candle-v2/video.mp4" controls playsinline preload="metadata" class="card-video"></video>
                         </div>
                         <div class="work__card-overlay">
                             <span>View Project</span>
@@ -114,14 +34,13 @@
                         <p class="work__card-desc">Carved wooden candle holder in ash wood with a sculptural silhouette.</p>
                     </div>
                 </div>
-
                 <div class="work__card reveal fade-up" data-folder="assets/images/wood-candle-v3" data-category="Candle" data-details="A sculptural wooden candle holder hand-carved from walnut, designed to cast intricate shadow patterns when lit.">
                     <div class="work__card-image">
                         <div class="card-gallery">
                             <img src="assets/images/wood-candle-v3/image-1.jpg" alt="Wood Candle III" loading="lazy">
                             <img src="assets/images/wood-candle-v3/image-2.jpg" alt="Wood Candle III" loading="lazy">
                             <img src="assets/images/wood-candle-v3/image-3.jpg" alt="Wood Candle III" loading="lazy">
-                            <video src="assets/images/wood-candle-v3/video.mp4" autoplay loop muted playsinline preload="metadata" class="card-video"></video>
+                            <video src="assets/images/wood-candle-v3/video.mp4" controls playsinline preload="metadata" class="card-video"></video>
                         </div>
                         <div class="work__card-overlay">
                             <span>View Project</span>
@@ -133,7 +52,6 @@
                         <p class="work__card-desc">A sculptural wooden candle holder carved from walnut that casts intricate shadow patterns.</p>
                     </div>
                 </div>
-
                 <div class="work__card reveal fade-up" data-folder="assets/images/coffee-table" data-category="Table" data-details="Modern coffee table crafted from solid oak with a minimalist silhouette and natural wood grain finish.">
                     <div class="work__card-image">
                         <div class="card-gallery">
@@ -154,7 +72,6 @@
                         <p class="work__card-desc">Modern coffee table crafted from solid oak with a minimalist silhouette.</p>
                     </div>
                 </div>
-
                 <div class="work__card reveal fade-up" data-folder="assets/images/spendle-bed" data-category="Bed" data-details="Handcrafted platform bed frame in white oak with integrated floating nightstands and concealed storage.">
                     <div class="work__card-image">
                         <div class="card-gallery">
@@ -175,12 +92,11 @@
                         <p class="work__card-desc">Handcrafted platform bed frame with integrated floating nightstands.</p>
                     </div>
                 </div>
-
                 <div class="work__card reveal fade-up" data-folder="assets/images/wood-flowers-holder" data-category="Decor" data-details="Elegant wooden flower holder hand-carved from walnut, designed to cradle floral arrangements in a natural sculptural form.">
                     <div class="work__card-image">
                         <div class="card-gallery">
                             <img src="assets/images/wood-flowers-holder/image-1.jpg" alt="Flowers Holder" loading="lazy">
-                            <video src="assets/images/wood-flowers-holder/video.mp4" autoplay loop muted playsinline preload="metadata" class="card-video"></video>
+                            <video src="assets/images/wood-flowers-holder/video.mp4" controls playsinline preload="metadata" class="card-video"></video>
                         </div>
                         <div class="work__card-overlay">
                             <span>View Project</span>
@@ -192,14 +108,13 @@
                         <p class="work__card-desc">Elegant wooden flower holder hand-carved to cradle floral arrangements.</p>
                     </div>
                 </div>
-
                 <div class="work__card reveal fade-up" data-folder="assets/images/wood-mirror" data-category="Mirror" data-details="Wall-mounted wooden mirror framed in hand-carved oak with a natural oil finish and minimalist profile.">
                     <div class="work__card-image">
                         <div class="card-gallery">
                             <img src="assets/images/wood-mirror/image-1.jpg" alt="Wood Mirror" loading="lazy">
                             <img src="assets/images/wood-mirror/image-2.jpg" alt="Wood Mirror" loading="lazy">
                             <img src="assets/images/wood-mirror/image-3.jpg" alt="Wood Mirror" loading="lazy">
-                            <video src="assets/images/wood-mirror/video.mp4" autoplay loop muted playsinline preload="metadata" class="card-video"></video>
+                            <video src="assets/images/wood-mirror/video.mp4" controls playsinline preload="metadata" class="card-video"></video>
                         </div>
                         <div class="work__card-overlay">
                             <span>View Project</span>
@@ -211,14 +126,13 @@
                         <p class="work__card-desc">Wall-mounted wooden mirror framed in hand-carved oak with a natural finish.</p>
                     </div>
                 </div>
-
                 <div class="work__card reveal fade-up" data-folder="assets/images/sweets-holder" data-category="Decor" data-details="Artisan wooden sweets holder with hand-carved compartments, finished with food-safe natural oils.">
                     <div class="work__card-image">
                         <div class="card-gallery">
                             <img src="assets/images/sweets-holder/image-1.jpg" alt="Sweets Holder" loading="lazy">
                             <img src="assets/images/sweets-holder/image-2.jpg" alt="Sweets Holder" loading="lazy">
                             <img src="assets/images/sweets-holder/image-3.jpg" alt="Sweets Holder" loading="lazy">
-                            <video src="assets/images/sweets-holder/video.mp4" autoplay loop muted playsinline preload="metadata" class="card-video"></video>
+                            <video src="assets/images/sweets-holder/video.mp4" controls playsinline preload="metadata" class="card-video"></video>
                         </div>
                         <div class="work__card-overlay">
                             <span>View Project</span>
@@ -230,7 +144,6 @@
                         <p class="work__card-desc">Artisan wooden sweets holder with hand-carved compartments.</p>
                     </div>
                 </div>
-
                 <div class="work__card reveal fade-up" data-folder="assets/images/wood-tray" data-category="Tray" data-details="Wooden serving tray crafted from walnut with raised edges, hand-oiled finish, and ergonomic handles.">
                     <div class="work__card-image">
                         <div class="card-gallery">
@@ -248,14 +161,13 @@
                         <p class="work__card-desc">Wooden serving tray crafted from walnut with raised edges and hand-oiled finish.</p>
                     </div>
                 </div>
-
                 <div class="work__card reveal fade-up" data-folder="assets/images/wooden-sweets-holder" data-category="Decor" data-details="Intricately carved wooden sweets holder featuring geometric patterns and multiple compartments.">
                     <div class="work__card-image">
                         <div class="card-gallery">
                             <img src="assets/images/wooden-sweets-holder/image-1.jpg" alt="Wooden Sweets Holder" loading="lazy">
                             <img src="assets/images/wooden-sweets-holder/image-2.jpg" alt="Wooden Sweets Holder" loading="lazy">
                             <img src="assets/images/wooden-sweets-holder/image-3.jpg" alt="Wooden Sweets Holder" loading="lazy">
-                            <video src="assets/images/wooden-sweets-holder/video.mp4" autoplay loop muted playsinline preload="metadata" class="card-video"></video>
+                            <video src="assets/images/wooden-sweets-holder/video.mp4" controls playsinline preload="metadata" class="card-video"></video>
                         </div>
                         <div class="work__card-overlay">
                             <span>View Project</span>
@@ -267,7 +179,6 @@
                         <p class="work__card-desc">Intricately carved wooden sweets holder with geometric patterns.</p>
                     </div>
                 </div>
-
                 <div class="work__card reveal fade-up" data-folder="assets/images/study-chire" data-category="Chair" data-details="Ergonomic study chair handcrafted from solid beechwood with a sculpted seat and curved backrest for optimal comfort.">
                     <div class="work__card-image">
                         <div class="card-gallery">
@@ -285,7 +196,6 @@
                         <p class="work__card-desc">Ergonomic study chair handcrafted from solid beechwood with a sculpted seat.</p>
                     </div>
                 </div>
-
                 <div class="work__card reveal fade-up" data-folder="assets/images/notable-project" data-category="Furniture" data-details="A distinctive furniture piece blending form and function, crafted from premium materials with meticulous attention to detail.">
                     <div class="work__card-image">
                         <div class="card-gallery">
@@ -303,7 +213,6 @@
                         <p class="work__card-desc">A distinctive furniture piece blending form and function with premium craftsmanship.</p>
                     </div>
                 </div>
-
                 <div class="work__card reveal fade-up" data-folder="assets/images/bar-cabinet" data-category="Cabinet" data-details="Elegant bar cabinet crafted from walnut with interior shelving, glass holders, and brushed brass hardware.">
                     <div class="work__card-image">
                         <div class="card-gallery">
@@ -322,113 +231,3 @@
                     </div>
                 </div>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== ABOUT ====== -->
-    <section class="about section" id="about">
-        <div class="container">
-            <div class="about__grid">
-                <div class="about__content reveal fade-up">
-                    <div class="section__header">
-                        <p class="section__label">About</p>
-                        <h2 class="section__title">The Artisan<br>Behind the Work</h2>
-                    </div>
-                    <p class="about__text">
-                        I am a furniture designer and craftsman based in Saudi Arabia, with a deep 
-                        passion for minimalist forms and honest materials. Every piece I create 
-                        begins as a conversation between function and beauty.
-                    </p>
-                    <p class="about__text">
-                        With over a decade of experience working with solid wood, steel, and natural 
-                        stone, I believe furniture should not only fill a space — it should define it. 
-                        My work is an ongoing exploration of proportion, texture, and the quiet 
-                        poetry of everyday objects.
-                    </p>
-                    <p class="about__text">
-                        Each commission is approached with meticulous attention to detail, from the 
-                        first sketch to the final hand-finish. I collaborate closely with architects, 
-                        interior designers, and private clients to realize furniture that is both 
-                        timeless and deeply personal.
-                    </p>
-                    <div class="about__stats">
-                        <div class="about__stat">
-                            <span class="about__stat-number">12+</span>
-                            <span class="about__stat-label">Years Experience</span>
-                        </div>
-                        <div class="about__stat">
-                            <span class="about__stat-number">80+</span>
-                            <span class="about__stat-label">Projects Delivered</span>
-                        </div>
-                        <div class="about__stat">
-                            <span class="about__stat-number">40+</span>
-                            <span class="about__stat-label">Happy Clients</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== CONTACT ====== -->
-    <section class="contact section" id="contact">
-        <div class="container">
-            <div class="contact__inner">
-                <div class="contact__header reveal fade-up">
-                    <p class="section__label">Get in Touch</p>
-                    <h2 class="section__title">Let's Create<br>Something Together</h2>
-                </div>
-                <p class="contact__text reveal fade-up">
-                    Interested in commissioning a piece, collaborating on a project, 
-                    or simply want to say hello? I'd love to hear from you.
-                </p>
-                <a href="mailto:ameralrshed55@gmail.com" class="contact__email reveal fade-up">
-                    ameralrshed55@gmail.com
-                </a>
-                <div class="contact__socials reveal fade-up">
-                    <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=tqbmn45" class="contact__social-link" aria-label="Instagram" target="_blank" rel="noopener">Instagram</a>
-                    <a href="tel:+966538945039" class="contact__social-link" aria-label="WhatsApp">+966 53 894 5039</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== FOOTER ====== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__inner">
-                <p class="footer__copy">&copy; 2026 Aamir Art. All rights reserved.</p>
-                <p class="footer__tag">Designed with intention</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- ====== SCROLL TO TOP ====== -->
-    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 15l-6-6-6 6"></path>
-        </svg>
-    </button>
-
-    <!-- ====== PROJECT MODAL ====== -->
-    <div class="modal" id="projectModal">
-        <div class="modal__backdrop"></div>
-        <div class="modal__content">
-            <button class="modal__close" aria-label="Close modal">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M18 6L6 18M6 6l12 12"></path>
-                </svg>
-            </button>
-            <div class="modal__image"></div>
-            <div class="modal__body">
-                <span class="modal__category"></span>
-                <h3 class="modal__title"></h3>
-                <p class="modal__details"></p>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>

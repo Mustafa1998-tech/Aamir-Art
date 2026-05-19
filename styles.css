@@ -546,7 +546,7 @@ button {
 .work__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-lg);
+    gap: var(--space-2xl);
 }
 
 .work__card {
@@ -556,6 +556,7 @@ button {
                 box-shadow var(--duration-medium) var(--ease-out);
     cursor: pointer;
     box-shadow: var(--shadow-card);
+    margin-bottom: var(--space-lg);
 }
 
 .work__card:hover {
@@ -576,15 +577,10 @@ button {
 
 .work__card-image .card-gallery img {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1;
     object-fit: cover;
     transition: transform var(--duration-slow) var(--ease-out);
     display: block;
-}
-
-.work__card-image .card-gallery img:first-child {
-    grid-column: 1 / -1;
-    aspect-ratio: 16 / 9;
 }
 
 .work__card-image .card-gallery .card-video {
@@ -595,8 +591,10 @@ button {
     background: #000;
 }
 
-.work__card:hover .card-gallery img {
+.work__card:hover .card-gallery img:hover {
     transform: scale(1.05);
+    z-index: 2;
+    position: relative;
 }
 
 .work__card-overlay {
@@ -1057,11 +1055,11 @@ button {
 
     .work__grid {
         grid-template-columns: 1fr;
-        gap: var(--space-md);
+        gap: var(--space-2xl);
     }
 
     .work__card-image .card-gallery {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
 
     .about__stats {
@@ -1097,7 +1095,7 @@ button {
 @media (min-width: 769px) and (max-width: 1024px) {
     .work__grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-md);
+        gap: var(--space-xl);
     }
 
     .about__grid {
