@@ -127,8 +127,28 @@
     }
 
     // ============================================
-    // 5. (removed - parallax tilt conflicts with gallery)
+    // 5. DARK MODE TOGGLE
     // ============================================
+    const themeToggle = document.getElementById('themeToggle');
+
+    function setTheme(dark) {
+        if (dark) {
+            document.documentElement.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light');
+        }
+    }
+
+    if (localStorage.getItem('theme') === 'dark' ||
+        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        setTheme(true);
+    }
+
+    themeToggle?.addEventListener('click', () => {
+        setTheme(!document.documentElement.classList.contains('dark-mode'));
+    });
 
     // ============================================
     // 6. CURSOR FOLLOW (subtle dot) — desktop only
