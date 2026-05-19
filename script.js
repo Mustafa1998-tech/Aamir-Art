@@ -223,4 +223,66 @@
     window.addEventListener('scroll', updateActiveLink, { passive: true });
     updateActiveLink();
 
+    // ============================================
+    // 8. PROJECT MODAL
+    // ============================================
+    const modal = document.getElementById('projectModal');
+    const modalBackdrop = modal?.querySelector('.modal__backdrop');
+    const modalClose = modal?.querySelector('.modal__close');
+    const modalImage = modal?.querySelector('.modal__image');
+    const modalCategory = modal?.querySelector('.modal__category');
+    const modalTitle = modal?.querySelector('.modal__title');
+    const modalDetails = modal?.querySelector('.modal__details');
+
+    function openModal(card) {
+        if (!modal) return;
+
+        const img = card.querySelector('.work__card-image img');
+        const videoSrc = card.dataset.video;
+        const category = card.querySelector('.work__card-category')?.textContent || '';
+        const title = card.querySelector('.work__card-title')?.textContent || '';
+        const details = card.dataset.details || '';
+
+        modalImage.innerHTML = '';
+        if (videoSrc) {
+            const video = document.createElement('video');
+            video.src = videoSrc;
+            video.controls = true;
+            video.autoplay = true;
+            video.playsInline = true;
+            modalImage.appendChild(video);
+        } else if (img) {
+            const clone = img.cloneNode();
+            modalImage.appendChild(clone);
+        }
+
+        modalCategory.textContent = category;
+        modalTitle.textContent = title;
+        modalDetails.textContent = details;
+
+        document.body.style.overflow = 'hidden';
+        modal.classList.add('open');
+    }
+
+    function closeModal() {
+        if (!modal) return;
+        document.body.style.overflow = '';
+        modal.classList.remove('open');
+        const video = modalImage?.querySelector('video');
+        if (video) video.pause();
+    }
+
+    document.querySelectorAll('.work__card').forEach((card) => {
+        card.addEventListener('click', () => openModal(card));
+    });
+
+    modalClose?.addEventListener('click', closeModal);
+    modalBackdrop?.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal?.classList.contains('open')) {
+            closeModal();
+        }
+    });
+
 })();
