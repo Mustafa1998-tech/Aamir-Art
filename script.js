@@ -15,7 +15,6 @@
         (entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    // Add a stagger delay based on index among siblings
                     const parent = entry.target.parentElement;
                     const siblings = parent
                         ? Array.from(parent.querySelectorAll('.reveal'))
@@ -64,7 +63,6 @@
                 behavior: 'smooth',
             });
 
-            // Close mobile menu if open
             closeMobileMenu();
         });
     });
@@ -83,7 +81,6 @@
     }
 
     window.addEventListener('scroll', handleNavScroll, { passive: true });
-    // Set initial state
     handleNavScroll();
 
     // ============================================
@@ -113,12 +110,10 @@
             }
         });
 
-        // Close mobile menu on link click (for fallback)
         mobileMenu.querySelectorAll('.mobile-menu__link').forEach((link) => {
             link.addEventListener('click', closeMobileMenu);
         });
 
-        // Close on resize past breakpoint
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768 && mobileMenu.classList.contains('open')) {
                 closeMobileMenu();
@@ -127,45 +122,16 @@
     }
 
     // ============================================
-    // 5. DARK MODE TOGGLE
-    // ============================================
-    const themeToggle = document.getElementById('themeToggle');
-
-    function setTheme(dark) {
-        if (dark) {
-            document.documentElement.classList.add('dark-mode');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.documentElement.classList.remove('dark-mode');
-            localStorage.setItem('theme', 'light');
-        }
-    }
-
-    if (localStorage.getItem('theme') === 'dark' ||
-        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        setTheme(true);
-    }
-
-    themeToggle?.addEventListener('click', () => {
-        setTheme(!document.documentElement.classList.contains('dark-mode'));
-    });
-
-    // ============================================
-    // 6. CURSOR FOLLOW (subtle dot) — desktop only
+    // 5. CURSOR FOLLOW (subtle dot) — desktop only
     // ============================================
     const cursor = document.createElement('div');
     cursor.classList.add('cursor-dot');
     document.body.appendChild(cursor);
 
     let cursorVisible = false;
-    let cursorX = 0;
-    let cursorY = 0;
 
     document.addEventListener('mousemove', (e) => {
-        cursorX = e.clientX;
-        cursorY = e.clientY;
-        cursor.style.transform = `translate(${cursorX - 4}px, ${cursorY - 4}px)`;
-
+        cursor.style.transform = `translate(${e.clientX - 4}px, ${e.clientY - 4}px)`;
         if (!cursorVisible) {
             cursorVisible = true;
             cursor.style.opacity = '1';
@@ -177,17 +143,12 @@
         cursor.style.opacity = '0';
     });
 
-    // Hide cursor on touch devices
-    function isTouchDevice() {
-        return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    }
-
-    if (isTouchDevice()) {
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
         cursor.remove();
     }
 
     // ============================================
-    // 7. ACTIVE NAV LINK ON SCROLL
+    // 6. ACTIVE NAV LINK ON SCROLL
     // ============================================
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav__link');
@@ -199,7 +160,6 @@
         sections.forEach((section) => {
             const top = section.offsetTop;
             const bottom = top + section.offsetHeight;
-
             if (scrollPos >= top && scrollPos < bottom) {
                 current = section.getAttribute('id');
             }
@@ -218,7 +178,69 @@
     updateActiveLink();
 
     // ============================================
-    // 8. PROJECT MODAL
+    // 7. STAT COUNTER ANIMATION
+    // ============================================
+    function animateCounters() {
+        document.querySelectorAll('.about__stat-number').forEach((el) => {
+            const text = el.textContent;
+            const target = parseInt(text);
+            if (isNaN(target)) return;
+
+            const suffix = text.replace(/[\d]/g, '');
+            const duration = 1500;
+            const start = performance.now();
+
+            function update(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = Math.floor(eased * target);
+                el.textContent = current + suffix;
+                if (progress < 1) requestAnimationFrame(update);
+            }
+
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        requestAnimationFrame(update);
+                        counterObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counterObserver.observe(el);
+        });
+    }
+
+    animateCounters();
+
+    // ============================================
+    // 8. SCROLL TO TOP & PROGRESS BAR
+    // ============================================
+    const scrollTopBtn = document.getElementById('scrollTop');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            scrollTopBtn?.classList.add('visible');
+        } else {
+            scrollTopBtn?.classList.remove('visible');
+        }
+
+        const scrollProgressBar = document.getElementById('scrollProgressBar');
+        if (scrollProgressBar) {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            scrollProgressBar.style.width = scrollPercent + '%';
+        }
+    }, { passive: true });
+
+    scrollTopBtn?.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ============================================
+    // 9. PROJECT MODAL
     // ============================================
     const modal = document.getElementById('projectModal');
     const modalBackdrop = modal?.querySelector('.modal__backdrop');

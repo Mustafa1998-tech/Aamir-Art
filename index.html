@@ -10,6 +10,9 @@
 </head>
 <body>
 
+    <!-- ====== SCROLL PROGRESS ====== -->
+    <div class="scroll-progress"><div class="scroll-progress__bar" id="scrollProgressBar"></div></div>
+
     <!-- ====== NAVIGATION ====== -->
     <nav class="nav">
         <div class="nav__inner container">
@@ -20,15 +23,6 @@
                 <a href="#contact" class="nav__link">Contact</a>
             </div>
             <div class="nav__actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                    <svg class="theme-toggle__icon theme-toggle__sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
-                    </svg>
-                    <svg class="theme-toggle__icon theme-toggle__moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
                 <button class="nav__toggle" aria-label="Menu">
                     <span></span><span></span><span></span>
                 </button>
@@ -77,16 +71,15 @@
             </div>
             <div class="work__grid">
 
+                <!-- ===== DECORATION PROJECTS ===== -->
+
                 <div class="work__card reveal fade-up" data-folder="assets/images/wood-candle" data-category="Candle" data-details="Handcrafted wooden candle holder carved from natural oak. Each piece features a unique grain pattern and is finished with organic beeswax for a warm, ambient glow.">
                     <div class="work__card-image">
                         <div class="card-gallery">
+                            <video src="assets/images/wood-candle/video.mp4" autoplay loop muted playsinline preload="metadata" class="card-video"></video>
                             <img src="assets/images/wood-candle/image-1.jpg" alt="Wood Candle" loading="lazy">
                             <img src="assets/images/wood-candle/image-2.jpg" alt="Wood Candle" loading="lazy">
                             <img src="assets/images/wood-candle/image-3.jpg" alt="Wood Candle" loading="lazy">
-                            <video src="assets/images/wood-candle/video.mp4" autoplay loop muted playsinline preload="metadata" class="card-video"></video>
-                        </div>
-                        <div class="work__card-overlay">
-                            <span>View Project</span>
                         </div>
                     </div>
                     <div class="work__card-body">
@@ -99,13 +92,10 @@
                 <div class="work__card reveal fade-up" data-folder="assets/images/wood-candle-v2" data-category="Candle" data-details="Carved wooden candle holder in ash wood with a sculptural silhouette, finished with natural linseed oil.">
                     <div class="work__card-image">
                         <div class="card-gallery">
+                            <video src="assets/images/wood-candle-v2/video.mp4" autoplay loop muted playsinline preload="metadata" class="card-video"></video>
                             <img src="assets/images/wood-candle-v2/image-1.jpg" alt="Wood Candle II" loading="lazy">
                             <img src="assets/images/wood-candle-v2/image-2.jpg" alt="Wood Candle II" loading="lazy">
                             <img src="assets/images/wood-candle-v2/image-3.jpg" alt="Wood Candle II" loading="lazy">
-                            <video src="assets/images/wood-candle-v2/video.mp4" autoplay loop muted playsinline preload="metadata" class="card-video"></video>
-                        </div>
-                        <div class="work__card-overlay">
-                            <span>View Project</span>
                         </div>
                     </div>
                     <div class="work__card-body">
@@ -118,13 +108,10 @@
                 <div class="work__card reveal fade-up" data-folder="assets/images/wood-candle-v3" data-category="Candle" data-details="A sculptural wooden candle holder hand-carved from walnut, designed to cast intricate shadow patterns when lit.">
                     <div class="work__card-image">
                         <div class="card-gallery">
+                            <video src="assets/images/wood-candle-v3/video.mp4" autoplay loop muted playsinline preload="metadata" class="card-video"></video>
                             <img src="assets/images/wood-candle-v3/image-1.jpg" alt="Wood Candle III" loading="lazy">
                             <img src="assets/images/wood-candle-v3/image-2.jpg" alt="Wood Candle III" loading="lazy">
                             <img src="assets/images/wood-candle-v3/image-3.jpg" alt="Wood Candle III" loading="lazy">
-                            <video src="assets/images/wood-candle-v3/video.mp4" autoplay loop muted playsinline preload="metadata" class="card-video"></video>
-                        </div>
-                        <div class="work__card-overlay">
-                            <span>View Project</span>
                         </div>
                     </div>
                     <div class="work__card-body">
@@ -133,6 +120,85 @@
                         <p class="work__card-desc">A sculptural wooden candle holder carved from walnut that casts intricate shadow patterns.</p>
                     </div>
                 </div>
+
+                <div class="work__card reveal fade-up" data-folder="assets/images/wood-flowers-holder" data-category="Decor" data-details="Elegant wooden flower holder hand-carved from walnut, designed to cradle floral arrangements in a natural sculptural form.">
+                    <div class="work__card-image">
+                        <div class="card-gallery">
+                            <video src="assets/images/wood-flowers-holder/video.mp4" autoplay loop muted playsinline preload="metadata" class="card-video"></video>
+                            <img src="assets/images/wood-flowers-holder/image-1.jpg" alt="Flowers Holder" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="work__card-body">
+                        <span class="work__card-category">Decor</span>
+                        <h3 class="work__card-title">Flowers Holder</h3>
+                        <p class="work__card-desc">Elegant wooden flower holder hand-carved to cradle floral arrangements.</p>
+                    </div>
+                </div>
+
+                <div class="work__card reveal fade-up" data-folder="assets/images/wood-mirror" data-category="Mirror" data-details="Wall-mounted wooden mirror framed in hand-carved oak with a natural oil finish and minimalist profile.">
+                    <div class="work__card-image">
+                        <div class="card-gallery">
+                            <video src="assets/images/wood-mirror/video.mp4" autoplay loop muted playsinline preload="metadata" class="card-video"></video>
+                            <img src="assets/images/wood-mirror/image-1.jpg" alt="Wood Mirror" loading="lazy">
+                            <img src="assets/images/wood-mirror/image-2.jpg" alt="Wood Mirror" loading="lazy">
+                            <img src="assets/images/wood-mirror/image-3.jpg" alt="Wood Mirror" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="work__card-body">
+                        <span class="work__card-category">Mirror</span>
+                        <h3 class="work__card-title">Wood Mirror</h3>
+                        <p class="work__card-desc">Wall-mounted wooden mirror framed in hand-carved oak with a natural finish.</p>
+                    </div>
+                </div>
+
+                <div class="work__card reveal fade-up" data-folder="assets/images/sweets-holder" data-category="Decor" data-details="Artisan wooden sweets holder with hand-carved compartments, finished with food-safe natural oils.">
+                    <div class="work__card-image">
+                        <div class="card-gallery">
+                            <video src="assets/images/sweets-holder/video.mp4" autoplay loop muted playsinline preload="metadata" class="card-video"></video>
+                            <img src="assets/images/sweets-holder/image-1.jpg" alt="Sweets Holder" loading="lazy">
+                            <img src="assets/images/sweets-holder/image-2.jpg" alt="Sweets Holder" loading="lazy">
+                            <img src="assets/images/sweets-holder/image-3.jpg" alt="Sweets Holder" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="work__card-body">
+                        <span class="work__card-category">Decor</span>
+                        <h3 class="work__card-title">Sweets Holder</h3>
+                        <p class="work__card-desc">Artisan wooden sweets holder with hand-carved compartments.</p>
+                    </div>
+                </div>
+
+                <div class="work__card reveal fade-up" data-folder="assets/images/wooden-sweets-holder" data-category="Decor" data-details="Intricately carved wooden sweets holder featuring geometric patterns and multiple compartments.">
+                    <div class="work__card-image">
+                        <div class="card-gallery">
+                            <video src="assets/images/wooden-sweets-holder/video.mp4" autoplay loop muted playsinline preload="metadata" class="card-video"></video>
+                            <img src="assets/images/wooden-sweets-holder/image-1.jpg" alt="Wooden Sweets Holder" loading="lazy">
+                            <img src="assets/images/wooden-sweets-holder/image-2.jpg" alt="Wooden Sweets Holder" loading="lazy">
+                            <img src="assets/images/wooden-sweets-holder/image-3.jpg" alt="Wooden Sweets Holder" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="work__card-body">
+                        <span class="work__card-category">Decor</span>
+                        <h3 class="work__card-title">Wooden Sweets Holder</h3>
+                        <p class="work__card-desc">Intricately carved wooden sweets holder with geometric patterns.</p>
+                    </div>
+                </div>
+
+                <div class="work__card reveal fade-up" data-folder="assets/images/wood-tray" data-category="Tray" data-details="Wooden serving tray crafted from walnut with raised edges, hand-oiled finish, and ergonomic handles.">
+                    <div class="work__card-image">
+                        <div class="card-gallery">
+                            <img src="assets/images/wood-tray/image-1.jpg" alt="Wood Tray" loading="lazy">
+                            <img src="assets/images/wood-tray/image-2.jpg" alt="Wood Tray" loading="lazy">
+                            <img src="assets/images/wood-tray/image-3.jpg" alt="Wood Tray" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="work__card-body">
+                        <span class="work__card-category">Tray</span>
+                        <h3 class="work__card-title">Wood Tray</h3>
+                        <p class="work__card-desc">Wooden serving tray crafted from walnut with raised edges and hand-oiled finish.</p>
+                    </div>
+                </div>
+
+                <!-- ===== FURNITURE PROJECTS ===== -->
 
                 <div class="work__card reveal fade-up" data-folder="assets/images/coffee-table" data-category="Table" data-details="Modern coffee table crafted from solid oak with a minimalist silhouette and natural wood grain finish.">
                     <div class="work__card-image">
@@ -143,9 +209,6 @@
                             <img src="assets/images/coffee-table/image-4.jpg" alt="Coffee Table" loading="lazy">
                             <img src="assets/images/coffee-table/image-5.jpg" alt="Coffee Table" loading="lazy">
                             <img src="assets/images/coffee-table/image-6.jpg" alt="Coffee Table" loading="lazy">
-                        </div>
-                        <div class="work__card-overlay">
-                            <span>View Project</span>
                         </div>
                     </div>
                     <div class="work__card-body">
@@ -165,106 +228,11 @@
                             <img src="assets/images/spendle-bed/image-5.jpg" alt="Spendle Bed" loading="lazy">
                             <img src="assets/images/spendle-bed/image-6.jpg" alt="Spendle Bed" loading="lazy">
                         </div>
-                        <div class="work__card-overlay">
-                            <span>View Project</span>
-                        </div>
                     </div>
                     <div class="work__card-body">
                         <span class="work__card-category">Bed</span>
                         <h3 class="work__card-title">Spendle Bed</h3>
                         <p class="work__card-desc">Handcrafted platform bed frame with integrated floating nightstands.</p>
-                    </div>
-                </div>
-
-                <div class="work__card reveal fade-up" data-folder="assets/images/wood-flowers-holder" data-category="Decor" data-details="Elegant wooden flower holder hand-carved from walnut, designed to cradle floral arrangements in a natural sculptural form.">
-                    <div class="work__card-image">
-                        <div class="card-gallery">
-                            <img src="assets/images/wood-flowers-holder/image-1.jpg" alt="Flowers Holder" loading="lazy">
-                            <video src="assets/images/wood-flowers-holder/video.mp4" autoplay loop muted playsinline preload="metadata" class="card-video"></video>
-                        </div>
-                        <div class="work__card-overlay">
-                            <span>View Project</span>
-                        </div>
-                    </div>
-                    <div class="work__card-body">
-                        <span class="work__card-category">Decor</span>
-                        <h3 class="work__card-title">Flowers Holder</h3>
-                        <p class="work__card-desc">Elegant wooden flower holder hand-carved to cradle floral arrangements.</p>
-                    </div>
-                </div>
-
-                <div class="work__card reveal fade-up" data-folder="assets/images/wood-mirror" data-category="Mirror" data-details="Wall-mounted wooden mirror framed in hand-carved oak with a natural oil finish and minimalist profile.">
-                    <div class="work__card-image">
-                        <div class="card-gallery">
-                            <img src="assets/images/wood-mirror/image-1.jpg" alt="Wood Mirror" loading="lazy">
-                            <img src="assets/images/wood-mirror/image-2.jpg" alt="Wood Mirror" loading="lazy">
-                            <img src="assets/images/wood-mirror/image-3.jpg" alt="Wood Mirror" loading="lazy">
-                            <video src="assets/images/wood-mirror/video.mp4" autoplay loop muted playsinline preload="metadata" class="card-video"></video>
-                        </div>
-                        <div class="work__card-overlay">
-                            <span>View Project</span>
-                        </div>
-                    </div>
-                    <div class="work__card-body">
-                        <span class="work__card-category">Mirror</span>
-                        <h3 class="work__card-title">Wood Mirror</h3>
-                        <p class="work__card-desc">Wall-mounted wooden mirror framed in hand-carved oak with a natural finish.</p>
-                    </div>
-                </div>
-
-                <div class="work__card reveal fade-up" data-folder="assets/images/sweets-holder" data-category="Decor" data-details="Artisan wooden sweets holder with hand-carved compartments, finished with food-safe natural oils.">
-                    <div class="work__card-image">
-                        <div class="card-gallery">
-                            <img src="assets/images/sweets-holder/image-1.jpg" alt="Sweets Holder" loading="lazy">
-                            <img src="assets/images/sweets-holder/image-2.jpg" alt="Sweets Holder" loading="lazy">
-                            <img src="assets/images/sweets-holder/image-3.jpg" alt="Sweets Holder" loading="lazy">
-                            <video src="assets/images/sweets-holder/video.mp4" autoplay loop muted playsinline preload="metadata" class="card-video"></video>
-                        </div>
-                        <div class="work__card-overlay">
-                            <span>View Project</span>
-                        </div>
-                    </div>
-                    <div class="work__card-body">
-                        <span class="work__card-category">Decor</span>
-                        <h3 class="work__card-title">Sweets Holder</h3>
-                        <p class="work__card-desc">Artisan wooden sweets holder with hand-carved compartments.</p>
-                    </div>
-                </div>
-
-                <div class="work__card reveal fade-up" data-folder="assets/images/wood-tray" data-category="Tray" data-details="Wooden serving tray crafted from walnut with raised edges, hand-oiled finish, and ergonomic handles.">
-                    <div class="work__card-image">
-                        <div class="card-gallery">
-                            <img src="assets/images/wood-tray/image-1.jpg" alt="Wood Tray" loading="lazy">
-                            <img src="assets/images/wood-tray/image-2.jpg" alt="Wood Tray" loading="lazy">
-                            <img src="assets/images/wood-tray/image-3.jpg" alt="Wood Tray" loading="lazy">
-                        </div>
-                        <div class="work__card-overlay">
-                            <span>View Project</span>
-                        </div>
-                    </div>
-                    <div class="work__card-body">
-                        <span class="work__card-category">Tray</span>
-                        <h3 class="work__card-title">Wood Tray</h3>
-                        <p class="work__card-desc">Wooden serving tray crafted from walnut with raised edges and hand-oiled finish.</p>
-                    </div>
-                </div>
-
-                <div class="work__card reveal fade-up" data-folder="assets/images/wooden-sweets-holder" data-category="Decor" data-details="Intricately carved wooden sweets holder featuring geometric patterns and multiple compartments.">
-                    <div class="work__card-image">
-                        <div class="card-gallery">
-                            <img src="assets/images/wooden-sweets-holder/image-1.jpg" alt="Wooden Sweets Holder" loading="lazy">
-                            <img src="assets/images/wooden-sweets-holder/image-2.jpg" alt="Wooden Sweets Holder" loading="lazy">
-                            <img src="assets/images/wooden-sweets-holder/image-3.jpg" alt="Wooden Sweets Holder" loading="lazy">
-                            <video src="assets/images/wooden-sweets-holder/video.mp4" autoplay loop muted playsinline preload="metadata" class="card-video"></video>
-                        </div>
-                        <div class="work__card-overlay">
-                            <span>View Project</span>
-                        </div>
-                    </div>
-                    <div class="work__card-body">
-                        <span class="work__card-category">Decor</span>
-                        <h3 class="work__card-title">Wooden Sweets Holder</h3>
-                        <p class="work__card-desc">Intricately carved wooden sweets holder with geometric patterns.</p>
                     </div>
                 </div>
 
@@ -274,9 +242,6 @@
                             <img src="assets/images/study-chire/image-1.jpg" alt="Study Chair" loading="lazy">
                             <img src="assets/images/study-chire/image-2.jpg" alt="Study Chair" loading="lazy">
                             <img src="assets/images/study-chire/image-3.jpg" alt="Study Chair" loading="lazy">
-                        </div>
-                        <div class="work__card-overlay">
-                            <span>View Project</span>
                         </div>
                     </div>
                     <div class="work__card-body">
@@ -293,9 +258,6 @@
                             <img src="assets/images/notable-project/image-2.jpg" alt="Notable" loading="lazy">
                             <img src="assets/images/notable-project/image-3.jpg" alt="Notable" loading="lazy">
                         </div>
-                        <div class="work__card-overlay">
-                            <span>View Project</span>
-                        </div>
                     </div>
                     <div class="work__card-body">
                         <span class="work__card-category">Furniture</span>
@@ -310,9 +272,6 @@
                             <img src="assets/images/bar-cabinet/image-1.jpg" alt="Bar Cabinet" loading="lazy">
                             <img src="assets/images/bar-cabinet/image-2.jpg" alt="Bar Cabinet" loading="lazy">
                             <img src="assets/images/bar-cabinet/image-3.jpg" alt="Bar Cabinet" loading="lazy">
-                        </div>
-                        <div class="work__card-overlay">
-                            <span>View Project</span>
                         </div>
                     </div>
                     <div class="work__card-body">
@@ -354,11 +313,11 @@
                     </p>
                     <div class="about__stats">
                         <div class="about__stat">
-                            <span class="about__stat-number">12+</span>
+                            <span class="about__stat-number">5+</span>
                             <span class="about__stat-label">Years Experience</span>
                         </div>
                         <div class="about__stat">
-                            <span class="about__stat-number">80+</span>
+                            <span class="about__stat-number">40+</span>
                             <span class="about__stat-label">Projects Delivered</span>
                         </div>
                         <div class="about__stat">
